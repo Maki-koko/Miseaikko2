@@ -11,6 +11,31 @@
   </head>
 
   <body>
+    <header class="flex">
+      <div>
+        <a href="<%= current_admin ? admin_path : root_path %>">
+        <%= image_tag 'Miseaikko_long.png', size: '200x100' %>
+      </a>
+      </div>
+      <div>
+        <% if user_signed_in? %>
+          <div class="nav-item">
+            こんにちは、<%= current_user.name %>さん
+          </div>
+          <% end %>
+      </div>
+      <div>
+      <nav class="nav">
+        <ul class="navlist"></ul>
+        <ul class="navlist"></ul>
+        <ul class="navlist"></ul>
+      </nav>
+      </div>
+    </header>
     <%= yield %>
+    <footer>
+      <h3>Miseaikko</h3>
+      <h5>Ver.2.0</h5>
+    </footer>
   </body>
 </html>
